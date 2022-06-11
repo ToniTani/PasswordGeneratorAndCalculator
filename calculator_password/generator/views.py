@@ -1,9 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import random
 # Create your views here.
 
 def home(request):
-    return render(request, 'generator/home.html', {'password':'randwee32qjj2'})
+    return render(request, 'generator/home.html')
 
-def eggs(request):
-    return HttpResponse ('<h1> eggs! </h1>')
+def password(request):
+
+    characters = list('abcdefghijklmnopqrstuvwxyz')
+
+    length = 10
+
+    thepassword = ''
+    for x in range(length):
+        thepassword += random.choice.(characters)
+
+    return HttpResponse (request, 'generator/password.html', {'password':thepassword})
